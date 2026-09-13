@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ground floor plan — Plot 13, New Lahore City Phase 2 Block Y, Wah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDF0F2;
+    --ink:#16222B;
+    --wall:#2A3946;
+    --dim:#6A8492;
+    --hair:#B9C6CD;
+    --bed:#DBE7E1;
+    --bath:#D3E2EC;
+    --live:#EFE5D9;
+    --kit:#EAE3CF;
+    --guest:#E2DDEB;
+    --circ:#E3E7E9;
+    --sky:#CBDFE3;
+    --sky-line:#7FA9B0;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+    font-size:15px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    max-width:1080px;
+    margin:0 auto;
+    padding:40px 28px 64px;
+  }
+  header{
+    border-bottom:1.5px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:28px;
+  }
+  h1{
+    font-family:"Archivo Narrow","Arial Narrow",Arial,sans-serif;
+    font-weight:600;
+    font-size:2.1rem;
+    letter-spacing:.01em;
+    margin:0 0 4px;
+  }
+  header p{margin:0;color:#4A5C68;max-width:62ch}
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:36px;align-items:start}
+  @media (max-width:880px){.layout{grid-template-columns:1fr}}
+  figure{margin:0}
+  svg{width:100%;height:auto;display:block}
+  .side h2,.notes h2{
+    font-family:"Archivo Narrow","Arial Narrow",Arial,sans-serif;
+    font-size:1.05rem;font-weight:600;margin:0 0 10px;
+    padding-bottom:6px;border-bottom:1px solid var(--hair);
+  }
+  .side{position:sticky;top:24px}
+  .legend{list-style:none;margin:0 0 28px;padding:0;font-size:.86rem}
+  .legend li{display:flex;align-items:center;gap:9px;padding:3px 0}
+  .sw{width:20px;height:13px;border:.5px solid #9BABB4;flex:none}
+  table{border-collapse:collapse;width:100%;font-size:.82rem}
+  caption{text-align:left;font-family:"Archivo Narrow",Arial,sans-serif;font-size:1.05rem;font-weight:600;padding-bottom:6px;border-bottom:1px solid var(--hair);margin-bottom:0}
+  th,td{text-align:left;padding:5px 8px 5px 0;border-bottom:.5px solid var(--hair);white-space:nowrap}
+  th{font-weight:600;color:#4A5C68}
+  td.n{font-variant-numeric:tabular-nums}
+  .notes{margin-top:34px;border-top:1.5px solid var(--ink);padding-top:22px}
+  .notes ol{margin:0;padding-left:1.3em;max-width:72ch}
+  .notes li{margin-bottom:9px}
+  .block{
+    margin-top:34px;border:1px solid var(--ink);
+    display:grid;grid-template-columns:repeat(4,1fr);font-size:.8rem;
+  }
+  .block div{padding:9px 12px;border-right:.5px solid var(--hair)}
+  .block div:last-child{border-right:none}
+  .block span{display:block;color:#5C6E7A;font-size:.72rem;margin-bottom:1px}
+  @media print{
+    body{background:#fff}
+    .sheet{max-width:none;padding:0}
+    .side{position:static}
+    .layout{grid-template-columns:1fr 240px}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<header>
+  <h1>Ground floor plan</h1>
+  <p>Plot 13 (11 marla), Major Road 5, New Lahore City Phase 2, Block Y, Wah Cantt. Plot 34′ × 75′, facing north onto an 80 ft road. Drawn at 1 ft = 12 px with 9″ walls. Layout intent for architect review — not a construction drawing.</p>
+</header>
+
+<div class="layout">
+  <figure>
+    <svg id="plan" viewBox="0 0 560 1075" role="img" aria-label="Scaled ground floor plan showing a side car porch, foyer, guest room with bath, a central light well, stairs and lobby, two bedrooms with back-to-back baths along the west, a rear courtyard, living and dining, and a rear kitchen. Walls are drawn 9 inches thick with door swings and windows."></svg>
+  </figure>
+
+  <aside class="side">
+    <h2>Legend</h2>
+    <ul class="legend">
+      <li><span class="sw" style="background:var(--wall)"></span> 9″ wall</li>
+      <li><span class="sw" style="background:var(--sky)"></span> Open to sky</li>
+      <li><span class="sw" style="background:var(--bed)"></span> Bedroom</li>
+      <li><span class="sw" style="background:var(--bath)"></span> Bath</li>
+      <li><span class="sw" style="background:var(--guest)"></span> Guest room</li>
+      <li><span class="sw" style="background:var(--live)"></span> Living / dining</li>
+      <li><span class="sw" style="background:var(--kit)"></span> Kitchen</li>
+      <li><span class="sw" style="background:var(--circ)"></span> Circulation, store</li>
+    </ul>
+
+    <table>
+      <caption>Room schedule</caption>
+      <thead>
+        <tr><th>Space</th><th>c/c</th><th>Clear</th></tr>
+      </thead>
+      <tbody id="schedule"></tbody>
+    </table>
+  </aside>
+</div>
+
+<section class="notes">
+  <h2>Notes for the architect</h2>
+  <ol>
+    <li>Setbacks are 8′ front, 5′ rear, 5′ west side. Buildable envelope 29′ × 62′. The car porch roof covers the 5′ side strip plus a 4′ notch taken out of the building's front west corner, giving a 9′ × 16′ bay.</li>
+    <li>All walls shown 9″. Bath, closet and light-well partitions could drop to 4½″ if non-load-bearing, recovering roughly 25 sq ft — worth checking against the structural grid.</li>
+    <li>Dimensions on the drawing are wall centre to centre. The schedule gives clear internal sizes.</li>
+    <li>The internal passage is 3′-3″ clear at 9″ walls. Confirm this is acceptable, or widen to 4′-0″ clear by taking 9″ from bedroom 1.</li>
+    <li>The light well is open to the sky for the full height, with a louvered grille at roof level rather than glass, so it ventilates as well as lights. White plaster to all four faces, floor drain tied to the rainwater line.</li>
+    <li>Courtyard and light well together give a stack path — cool air drawn in low at the rear courtyard, hot air out through the well. This is the main passive cooling strategy, since the east, west and south walls are all party walls.</li>
+    <li>Stairs shown as a straight flight, 8′ × 12′ c/c. Confirm riser and going, and whether the well above stays open to the roof.</li>
+    <li>Roof is the dominant heat load on a plot enclosed on three sides. Insulated slab or a roof cavity matters more here than wall orientation. Solar panels face south at roughly 28–30°; keep the stair reaching usable roof access.</li>
+    <li>Verify whether the porch notch and the open shaft count against covered area. If exempt, the notch can be widened for an easier parking bay.</li>
+    <li>First floor should not simply mirror this plan — upper west rooms lose the shading the neighbouring wall gives the ground floor.</li>
+  </ol>
+</section>
+
+<div class="block">
+  <div><span>Plot</span>34′ × 75′ · north facing</div>
+  <div><span>Covered, ground floor</span>1,724 sq ft</div>
+  <div><span>Car porch, roofed</span>144 sq ft</div>
+  <div><span>Status</span>Sketch for review</div>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var S = 12;          // px per foot
+  var OX = 160, OY = 176;   // px at building origin (0,0)
+  var W  = 0.75;       // wall thickness, ft (9 in)
+  var NS = "http://www.w3.org/2000/svg";
+  var svg = document.getElementById("plan");
+
+  function x(f){ return OX + f*S; }
+  function y(f){ return OY + f*S; }
+  function el(tag, attrs){
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) if (attrs[k] !== undefined && attrs[k] !== null) n.setAttribute(k, attrs[k]);
+    svg.appendChild(n);
+    return n;
+  }
+  function rectF(x1,y1,x2,y2,attrs){
+    attrs = attrs || {};
+    attrs.x = x(x1); attrs.y = y(y1);
+    attrs.width = (x2-x1)*S; attrs.height = (y2-y1)*S;
+    return el("rect", attrs);
+  }
+  function text(px,py,str,opts){
+    opts = opts || {};
+    var t = el("text", {
+      x:px, y:py,
+      "text-anchor": opts.anchor || "middle",
+      "font-size": opts.size || 11,
+      "font-weight": opts.weight || 400,
+      "font-family": opts.family || '"Archivo Narrow","Arial Narrow",Arial,sans-serif',
+      fill: opts.fill || "var(--ink)",
+      transform: opts.transform
+    });
+    t.textContent = str;
+    return t;
+  }
+  function ft(v){
+    var w = Math.floor(v), i = Math.round((v - w) * 12);
+    if (i === 12){ w += 1; i = 0; }
+    return w + "'-" + (i < 10 ? "0" + i : i) + '"';
+  }
+
+  /* ---------- site ---------- */
+  // plot boundary
+  rectF(-5,-8,29,67,{fill:"none",stroke:"var(--hair)","stroke-width":1,"stroke-dasharray":"6 4"});
+
+  // rear open, west side strip, front lawn
+  rectF(0,62,29,67,{fill:"#E7EDEA"});
+  rectF(-5,8,0,62,{fill:"#E7EDEA"});
+  rectF(4,-8,29,0,{fill:"#E2ECE3"});
+
+  // car porch: roofed, spans the 5 ft strip plus the 4 ft notch
+  rectF(-5,-8,4,8,{fill:"var(--bath)",opacity:.55});
+  rectF(-5,-8,4,8,{fill:"none",stroke:"var(--sky-line)","stroke-width":1.5,"stroke-dasharray":"7 4"});
+  // car symbol
+  rectF(-3.6,-5.5,2.6,8.5,{rx:14,fill:"none",stroke:"var(--sky-line)","stroke-width":1});
+  rectF(-2.7,-3.2,1.7,2.2,{rx:5,fill:"none",stroke:"var(--sky-line)","stroke-width":.8});
+
+  /* ---------- room fills ---------- */
+  var rooms = [
+    {n:"Foyer",          a:4,  b:0,  c:16, d:8,  f:"var(--circ)"},
+    {n:"Guest room",     a:16, b:0,  c:29, d:14, f:"var(--guest)"},
+    {n:"Bath",           a:16, b:14, c:22, d:20, f:"var(--bath)"},
+    {n:"Light well",     a:22, b:14, c:29, d:20, f:"var(--sky)", sky:true},
+    {n:"Lobby",          a:16, b:20, c:21, d:32, f:"var(--circ)"},
+    {n:"Stairs",         a:21, b:20, c:29, d:32, f:"var(--circ)"},
+    {n:"Bedroom 1",      a:0,  b:8,  c:12, d:21, f:"var(--bed)"},
+    {n:"Bath 1",         a:0,  b:21, c:6,  d:27, f:"var(--bath)"},
+    {n:"Closet",         a:6,  b:21, c:12, d:27, f:"var(--circ)"},
+    {n:"Bath 2",         a:0,  b:27, c:6,  d:33, f:"var(--bath)"},
+    {n:"Closet",         a:6,  b:27, c:12, d:33, f:"var(--circ)"},
+    {n:"Bedroom 2",      a:0,  b:33, c:12, d:47, f:"var(--bed)"},
+    {n:"Passage",        a:12, b:8,  c:16, d:32, f:"var(--circ)"},
+    {n:"Living / dining",a:12, b:32, c:29, d:52, f:"var(--live)"},
+    {n:"Courtyard",      a:0,  b:47, c:12, d:62, f:"var(--sky)", sky:true},
+    {n:"Kitchen",        a:12, b:52, c:29, d:62, f:"var(--kit)"}
+  ];
+  rooms.forEach(function(r){ rectF(r.a,r.b,r.c,r.d,{fill:r.f}); });
+
+  // hatch the open-to-sky spaces
+  var defs = el("defs",{});
+  var pat = document.createElementNS(NS,"pattern");
+  pat.setAttribute("id","sky"); pat.setAttribute("width","9"); pat.setAttribute("height","9");
+  pat.setAttribute("patternUnits","userSpaceOnUse"); pat.setAttribute("patternTransform","rotate(45)");
+  var pl = document.createElementNS(NS,"line");
+  pl.setAttribute("x1","0"); pl.setAttribute("y1","0"); pl.setAttribute("x2","0"); pl.setAttribute("y2","9");
+  pl.setAttribute("stroke","var(--sky-line)"); pl.setAttribute("stroke-width",".7"); pl.setAttribute("opacity",".55");
+  pat.appendChild(pl); defs.appendChild(pat);
+  rooms.forEach(function(r){ if (r.sky) rectF(r.a,r.b,r.c,r.d,{fill:"url(#sky)"}); });
+
+  /* ---------- exterior wall ---------- */
+  // outline: (4,0)(29,0)(29,62)(0,62)(0,8)(4,8)
+  var outer = "M"+x(4)+","+y(0)+" H"+x(29)+" V"+y(62)+" H"+x(0)+" V"+y(8)+" H"+x(4)+" Z";
+  var inner = "M"+x(4+W)+","+y(0+W)+" H"+x(29-W)+" V"+y(62-W)+" H"+x(0+W)+" V"+y(8+W)+" H"+x(4+W)+" Z";
+  el("path",{d:outer+" "+inner,"fill-rule":"evenodd",fill:"var(--wall)"});
+
+  /* ---------- interior walls, centred on grid lines ---------- */
+  var vWalls = [[12,8,62],[16,0,32],[21,20,32],[22,14,20],[6,21,33]];
+  var hWalls = [[8,4,16],[14,16,29],[20,16,29],[21,0,12],[27,0,12],[33,0,12],[32,12,29],[47,0,12],[52,12,29]];
+  vWalls.forEach(function(w){ rectF(w[0]-W/2,w[1],w[0]+W/2,w[2],{fill:"var(--wall)"}); });
+  hWalls.forEach(function(w){ rectF(w[1],w[0]-W/2,w[2],w[0]+W/2,{fill:"var(--wall)"}); });
+
+  /* ---------- openings: cut through the wall ---------- */
+  var cuts = [
+    [3.85,3,4.9,6.5],      // main entrance, from car porch
+    [15.5,3,16.5,6],       // foyer to guest room
+    [11.5,10,12.5,13],     // passage to bedroom 1
+    [11.5,36,12.5,39],     // living to bedroom 2
+    [20.5,22,21.5,26],     // lobby to stairs
+    [17.5,13.5,20.5,14.5], // guest room to bath
+    [2,20.5,5,21.5],       // bedroom 1 to bath 1
+    [7.5,20.5,10.5,21.5],  // bedroom 1 to closet
+    [2,32.5,5,33.5],       // bedroom 2 to bath 2
+    [7.5,32.5,10.5,33.5],  // bedroom 2 to closet
+    [12.4,7.5,15.6,8.5],   // foyer to passage
+    [12.4,31.5,15.6,32.5], // passage to living
+    [17,31.5,20,32.5],     // lobby to living
+    [13,51.5,17,52.5],     // living to kitchen
+    [4,46.5,9,47.5],       // bedroom 2 to courtyard
+    [14,61.1,17,62.15],    // kitchen to rear yard
+    [3,61.1,6,62.15]       // courtyard gate to rear yard
+  ];
+  cuts.forEach(function(c){ rectF(c[0],c[1],c[2],c[3],{fill:"var(--paper)"}); });
+
+  /* ---------- windows ---------- */
+  var wins = [
+    ["v",0.375,11,18],  ["v",0.375,22.5,25.5], ["v",0.375,28.5,31.5], ["v",0.375,36,44],
+    ["h",0.375,18,27],
+    ["h",14,23,28],     ["h",20,23,28],
+    ["v",22,15.5,18.5],
+    ["v",12,48,51],     ["v",12,54,58],
+    ["h",61.625,20,27]
+  ];
+  wins.forEach(function(w){
+    var isV = w[0] === "v", c = w[1], a = w[2], b = w[3];
+    if (isV){
+      rectF(c-W/2,a,c+W/2,b,{fill:"var(--paper)"});
+      [c-0.2,c+0.2].forEach(function(o){
+        el("line",{x1:x(o),y1:y(a),x2:x(o),y2:y(b),stroke:"var(--wall)","stroke-width":1});
+      });
+    } else {
+      rectF(a,c-W/2,b,c+W/2,{fill:"var(--paper)"});
+      [c-0.2,c+0.2].forEach(function(o){
+        el("line",{x1:x(a),y1:y(o),x2:x(b),y2:y(o),stroke:"var(--wall)","stroke-width":1});
+      });
+    }
+  });
+
+  /* ---------- door leaves and swings ---------- */
+  // [orientation, wall line, start, end, hinge at start?, swing direction]
+  var doors = [
+    ["v",4.375,3,6.5,true,1],
+    ["v",16,3,6,true,-1],
+    ["v",12,10,13,true,-1],
+    ["v",12,36,39,false,1],
+    ["h",14,17.5,20.5,true,-1],
+    ["h",21,2,5,false,-1],
+    ["h",21,7.5,10.5,true,-1],
+    ["h",33,2,5,false,1],
+    ["h",33,7.5,10.5,true,1],
+    ["h",47,4,9,true,-1],
+    ["h",61.625,14,17,true,-1]
+  ];
+  doors.forEach(function(d){
+    var o=d[0], c=d[1], a=d[2], b=d[3], atStart=d[4], dir=d[5];
+    var w = b-a, h = atStart ? a : b, sty = {stroke:"var(--wall)","stroke-width":1.4,fill:"none"};
+    if (o === "v"){
+      el("line",{x1:x(c),y1:y(h),x2:x(c+dir*w),y2:y(h),stroke:sty.stroke,"stroke-width":sty["stroke-width"]});
+      el("path",{d:"M"+x(c+dir*w)+","+y(h)+" A"+(w*S)+","+(w*S)+" 0 0 "+((dir>0)===atStart?1:0)+" "+x(c)+","+y(atStart?b:a),
+                 fill:"none",stroke:"var(--wall)","stroke-width":.8,opacity:.6});
+    } else {
+      el("line",{x1:x(h),y1:y(c),x2:x(h),y2:y(c+dir*w),stroke:sty.stroke,"stroke-width":sty["stroke-width"]});
+      el("path",{d:"M"+x(h)+","+y(c+dir*w)+" A"+(w*S)+","+(w*S)+" 0 0 "+((dir>0)===atStart?0:1)+" "+x(atStart?b:a)+","+y(c),
+                 fill:"none",stroke:"var(--wall)","stroke-width":.8,opacity:.6});
+    }
+  });
+
+  /* ---------- stairs ---------- */
+  for (var i = 0; i < 11; i++){
+    var ty = 21 + i;
+    el("line",{x1:x(21.5),y1:y(ty),x2:x(28.6),y2:y(ty),stroke:"var(--wall)","stroke-width":.7,opacity:.65});
+  }
+  el("line",{x1:x(25),y1:y(31),x2:x(25),y2:y(21.6),stroke:"var(--wall)","stroke-width":1.1,
+             "marker-end":"none"});
+  el("path",{d:"M"+x(24.5)+","+y(22.4)+" L"+x(25)+","+y(21.4)+" L"+x(25.5)+","+y(22.4),
+             fill:"none",stroke:"var(--wall)","stroke-width":1.1});
+  text(x(25), y(32.6), "UP", {size:9, fill:"var(--dim)"});
+
+  /* ---------- room labels ---------- */
+  var labels = [
+    ["Foyer","12 × 8",       10,   4,    11],
+    ["Guest room","13 × 14", 22.5, 7,    12],
+    ["Bath","6 × 6",         19,   17,   10],
+    ["Light well","7 × 6",   25.5, 17,   10],
+    ["Lobby","5 × 12",       18.5, 26,   10],
+    ["Stairs","8 × 12",      25,   19.2, 10, true],
+    ["Bedroom 1","12 × 13",  6,    14.5, 12],
+    ["Bath 1","6 × 6",       3,    24,   10],
+    ["Closet","6 × 6",       9,    24,   10],
+    ["Bath 2","6 × 6",       3,    30,   10],
+    ["Closet","6 × 6",       9,    30,   10],
+    ["Bedroom 2","12 × 14",  6,    40,   12],
+    ["Living / dining","17 × 20", 20.5, 42, 12],
+    ["Courtyard","12 × 15",  6,    54,   12],
+    ["Kitchen","17 × 10",    20.5, 57,   12]
+  ];
+  labels.forEach(function(l){
+    var nm=l[0], dm=l[1], cx=l[2], cy=l[3], sz=l[4], above=l[5];
+    var py = above ? y(cy) : y(cy);
+    text(x(cx), py, nm, {size:sz, weight:600});
+    text(x(cx), py + sz + 3, dm, {size:sz-1.5, fill:"var(--dim)"});
+  });
+  text(x(14), y(20), "Passage", {size:10, weight:600, transform:"rotate(-90 "+x(14)+" "+y(20)+")"});
+  text(x(14)+11, y(20), "4′ c/c", {size:9, fill:"var(--dim)", transform:"rotate(-90 "+(x(14)+11)+" "+y(20)+")"});
+
+  // site labels
+  text(x(-0.5), y(0), "Car porch", {size:11, weight:600, transform:"rotate(-90 "+x(-0.5)+" "+y(0)+")"});
+  text(x(-0.5)+13, y(0), "9 × 16, roofed", {size:9, fill:"var(--dim)", transform:"rotate(-90 "+(x(-0.5)+13)+" "+y(0)+")"});
+  text(x(16.5), y(-4), "Front lawn  25 × 8", {size:11, weight:600, fill:"#3D5A47"});
+  text(x(14.5), y(64.8), "Rear open  5′-0″", {size:10, fill:"var(--dim)"});
+  text(x(-2.5), y(38), "5′-0″ open side", {size:10, fill:"var(--dim)", transform:"rotate(-90 "+x(-2.5)+" "+y(38)+")"});
+
+  /* ---------- dimensions ---------- */
+  function dimH(px1,px2,py,label,cls){
+    el("line",{x1:px1,y1:py,x2:px2,y2:py,stroke:"var(--dim)","stroke-width":.8});
+    [px1,px2].forEach(function(p){
+      el("line",{x1:p,y1:py-4,x2:p,y2:py+4,stroke:"var(--dim)","stroke-width":.8});
+    });
+    text((px1+px2)/2, py-6, label, {size:cls||11, fill:"var(--dim)", weight:500});
+  }
+  function dimV(py1,py2,px,label,cls){
+    el("line",{x1:px,y1:py1,x2:px,y2:py2,stroke:"var(--dim)","stroke-width":.8});
+    [py1,py2].forEach(function(p){
+      el("line",{x1:px-4,y1:p,x2:px+4,y2:p,stroke:"var(--dim)","stroke-width":.8});
+    });
+    var m=(py1+py2)/2;
+    text(px-5, m, label, {size:cls||11, fill:"var(--dim)", weight:500, transform:"rotate(-90 "+(px-5)+" "+m+")"});
+  }
+
+  dimH(x(-5), x(29), y(-8)-44, "34′-0″  plot width");
+  dimH(x(0),  x(29), y(-8)-22, "29′-0″  building");
+  dimV(y(-8), y(67), x(-5)-58, "75′-0″  plot");
+  dimV(y(0),  y(62), x(-5)-36, "62′-0″  building");
+
+  // vertical chain of room depths, inside the side strip
+  var chain = [[0,8],[8,21],[21,27],[27,33],[33,47],[47,62]];
+  chain.forEach(function(c){
+    dimV(y(c[0]), y(c[1]), x(-5)+14, ft(c[1]-c[0]), 9);
+  });
+  // horizontal chain at the rear
+  dimH(x(0), x(12), y(67)+30, "12′-0″", 9);
+  dimH(x(12), x(29), y(67)+30, "17′-0″", 9);
+  // front setback
+  dimV(y(-8), y(0), x(29)+22, "8′-0″", 9);
+
+  text(x(12), y(67)+62, "Dimensions are wall centre to centre.  Scale 1 ft = 12 px.  9″ walls.", {size:10, fill:"var(--dim)", anchor:"middle"});
+
+  /* ---------- room schedule ---------- */
+  var sched = [
+    ["Bedroom 1",12,13],["Bedroom 2",12,14],["Bath 1",6,6],["Bath 2",6,6],
+    ["Closet (×2)",6,6],["Guest room",13,14],["Guest bath",6,6],["Light well",7,6],
+    ["Foyer",12,8],["Passage",4,24],["Lobby",5,12],["Stairs",8,12],
+    ["Living / dining",17,20],["Kitchen",17,10],["Courtyard",12,15]
+  ];
+  var tb = document.getElementById("schedule");
+  sched.forEach(function(r){
+    var tr = document.createElement("tr");
+    tr.innerHTML = "<td>"+r[0]+"</td><td class='n'>"+r[1]+"′×"+r[2]+"′</td>"+
+                   "<td class='n'>"+ft(r[1]-W)+" × "+ft(r[2]-W)+"</td>";
+    tb.appendChild(tr);
+  });
+})();
+</script>
+</body>
+</html>
